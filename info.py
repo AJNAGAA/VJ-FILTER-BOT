@@ -166,3 +166,6 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "2160p"]
+
+#start_command_reactions
+REACTIONS = ["😀", "😃", "😄", "😁", "😊", "😇" ,"🙂", "😉", "😌", "😍", "🥰", "😘", "😚", "😋", "😎", "🤩", "🥳", "🙏", "👍", "🙌", "👏", "🤝", "🤞", "✌", "🤟", "🤘", "👌", "💪", "🤙", "👄", "🤗", "🥴", "⚡", "✨", "🔥", "💥", "💫", "❤",  "💓", "💯"] #don't add any emoji because tg not support all emoji reactions
