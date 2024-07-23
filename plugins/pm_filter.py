@@ -2080,13 +2080,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "about":
+   elif query.data == "about": 
+        buttons = [[ 
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK), 
+            InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', callback_data='source') 
+        ],[ 
+            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'), 
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data') 
+        ]] 
+        await client.edit_message_media( 
+            query.message.chat.id,  
+            query.message.id,  
+            InputMediaPhoto(random.choice(PICS)) 
+        ) 
+        reply_markup = InlineKeyboardMarkup(buttons) 
+        await query.message.edit_text( 
+            text=script.ABOUT_TXT.format(temp.U_NAME, temp.B_NAME), 
+            reply_markup=reply_markup, 
+            parse_mode=enums.ParseMode.HTML 
+        )
+    elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
-            InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', url="")
-        ],[
-            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton('≼ Bᴀᴄᴋ', callback_data='about')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -2094,8 +2109,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InputMediaPhoto(random.choice(PICS))
         )
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.U_NAME, temp.B_NAME),
+        await query.message.edit_text(f"Tʜɪs Bᴏᴛ Is A Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ\n\nWɪᴛʜ Aʟʟ Tʜᴇ Lᴀᴛᴇsᴛ Aɴᴅ Aᴅᴠᴀɴᴄᴇᴅ Fᴇᴀᴛᴜʀᴇs\n\nIғ Yᴏᴜ Wᴀɴᴛ Tʜɪs Tʏᴘᴇ Oғ Bᴏᴛ Cᴏɴᴛᴀᴄᴛ <a href=https://telegram.me/zencontbot>Cᴏɴᴛᴀᴄᴛ Mᴇ</a>",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
